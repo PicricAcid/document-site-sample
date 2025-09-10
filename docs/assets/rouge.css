@@ -1,0 +1,32 @@
+.highlight { color: #24292e; background: #f6f8fa; }
+.highlight .c { color: #6a737d; font-style: italic } /* コメント */
+.highlight .err { color: #d73a49 } /* エラー */
+.highlight .k { color: #d73a49 }   /* キーワード */
+.highlight .o { color: #d73a49 }   /* 演算子 */
+.highlight .cm { color: #6a737d; font-style: italic }
+.highlight .cp { color: #d73a49 }
+.highlight .c1 { color: #6a737d; font-style: italic }
+.highlight .cs { color: #6a737d; font-style: italic }
+.highlight .gd { color: #b31d28; background-color:#ffeef0 }
+.highlight .gi { color: #22863a; background-color:#f0fff4 }
+.highlight .gu { color: #6f42c1 }
+.highlight .kc { color: #005cc5 }
+.highlight .kd { color: #d73a49 }
+.highlight .kn { color: #d73a49 }
+.highlight .kp { color: #d73a49 }
+.highlight .kr { color: #d73a49 }
+.highlight .kt { color: #22863a }
+.highlight .m { color: #005cc5 }
+.highlight .s { color: #032f62 }   /* 文字列 */
+.highlight .na { color: #6f42c1 }
+.highlight .nb { color: #005cc5 }
+.highlight .nc { color: #6f42c1 }
+.highlight .no { color: #005cc5 }
+.highlight .nd { color: #6f42c1 }
+.highlight .ni { color: #005cc5 }
+.highlight .ne { color: #6f42c1 }
+.highlight .nf { color: #6f42c1 }
+.highlight .nl { color: #6f42c1 }
+.highlight .nn { color: #6f42c1 }
+.highlight .nt { color: #22863a }
+.highlight .nv { color: #24292e }
