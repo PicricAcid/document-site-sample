@@ -3,8 +3,6 @@ title: "Document Site"
 layout: default
 ---
 
-# ドキュメントサイト
-
 これはGitHub Pagesを使ったドキュメントサイトのサンプルです。 
 
 ---
