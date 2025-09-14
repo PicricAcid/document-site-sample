@@ -7,24 +7,15 @@ layout: default
 
 ---
 
-## コードブロック
+## 🗒️ 記事一覧
 
-コードブロックのサンプルです。
-
-```c
-#include <stdio.h>
-int main(void){
-  printf("Hello Manual Site!\n");
-  return 0;
-}
-```
+<ul>
+	{% assign pages = site.pages | where_exp: "p", "p.path contains 'contents/'" %}
+	{% for p in pages %}
+		<li>
+			<a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+		</li>
+	{% endfor %}
+</ul>
 
 ---
-
-## 数式
-
-数式のサンプルです。
-
-$$
-e = \sum_{n=0}^{\infty} \frac{1}{n!}
-$$
