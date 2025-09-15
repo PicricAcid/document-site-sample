@@ -1,7 +1,7 @@
 ---
 title: GitHubによるドキュメントサイト管理システムの構築 Part.1
 author: PicricAcid
-tags: [GitHub, GitHubPages]
+tags: [github, hithub_pages]
 ---
 
 GitHub Pagesを用いてMarkdownドキュメントを静的サイトにして公開するシステムを構築してみた記事です。
