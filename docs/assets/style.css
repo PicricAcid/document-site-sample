@@ -69,6 +69,29 @@ p code, li code {
 	opacity: 1;
 }
 
+.site-header {
+  background: #cfd2d3;
+  color: #333;
+  padding: 1rem 0;
+}
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.site-header > .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-header a {
+  color: #333;
+}
+.site-header a:hover {
+  text-decoration: underline;
+}
+
 .page {
   display: flex;
   flex-wrap: wrap;
