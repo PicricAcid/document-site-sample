@@ -38,11 +38,17 @@
       <h1 class="page-title">{{ page.title }}</h1>
       {{ content }}
     </main>
+
+    <aside class="page-sidebar">
+      <div class="page-toc" id="toc"></div>
+    </aside>
   </div>
 
   <footer>
     <p>©︎ {{ site.time | date: "%Y" }} {{ site.title }}</p>
   </footer>
+
+  <script src="{{ site.baseurl }}/assets/toc.js"></script>
 </body>
 
 </html>
