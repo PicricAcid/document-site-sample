@@ -41,6 +41,14 @@
 
     <aside class="page-sidebar">
       <div class="page-toc" id="toc"></div>
+
+      <div class="feedback">
+        <a class="feedback-button" 
+          href="https://github.com/PicricAcid/document-site-sample/issues/new?title={{ page.title | uri_escape }} のフィードバック&body=このページに関するフィードバックを入力してください: {{ site.url }}{{ page.url }}%0A%0A@{{ site.data.authors[page.author].github | page.author }}"
+          target="_blank">
+          📝 フィードバックを送る
+        </a>
+      </div>
     </aside>
   </div>
 
