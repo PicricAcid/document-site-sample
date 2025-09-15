@@ -175,3 +175,27 @@ h4 {
   border-radius: 6px;
   font-size: 0.9em;
 }
+
+.feedback {
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: center;
+}
+
+.feedback-button {
+  display: inline-block;
+  background-color: #0366d6;
+  color: white;
+  padding: 0.5em 1em;
+  font-size: 0.85em;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.feedback-button:hover {
+  background-color: #024ea2;
+}
