@@ -36,6 +36,19 @@
   <div class="wrapper page">
     <main class="page-content">
       <h1 class="page-title">{{ page.title }}</h1>
+      <p class="page-meta">
+        {% if page.author %}🖋 {{ page.author }} {% endif %}
+      </p>
+	
+      {% if page.tags %}
+        <p class="page-tags">
+          🏷 :
+          {% for tag in page.tags %}
+            <a class="tag-link" href="{{ site.baseurl }}/tags/{{ tag | downcase | uri_escape }}">[{{ tag }}]</a>
+          {% endfor %}
+        </p>
+      {% endif %}
+      
       {{ content }}
     </main>
 
