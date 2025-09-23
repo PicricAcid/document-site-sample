@@ -3,7 +3,7 @@ title: GitHubによるドキュメントサイト管理システムの構築　P
 author: PicricAcid
 date: 2025-09-23
 lastmod: 2025-09-23
-tags: [github, github_pages]
+tags: [github, github_pages, vscode]
 ---
 
 GitHub Pagesで作るMarkdownドキュメントサイトシステムの第2回です。
@@ -60,7 +60,7 @@ layout: default
 
 ```
 
-`\{% \%}`や`{{ }}`で囲っている箇所は、GitHub Pages上で動いているサイト変換ツール(Jekyll)で使うことのできるLiquidというテンプレート記法によるものです。`{{ }}`で囲った部分は内容をHTMLに埋め込むことができ、`\{% \%}`で囲った部分ではforやifなどの制御文を使うことができます。
+`\{\% \%\}`や`{{ }}`で囲っている箇所は、GitHub Pages上で動いているサイト変換ツール(Jekyll)で使うことのできるLiquidというテンプレート記法によるものです。`{{ }}`で囲った部分は内容をHTMLに埋め込むことができ、`\{\% \%\}`で囲った部分ではforやifなどの制御文を使うことができます。
 ここでは、記事を置いている`docs/contents/`から記事をすべて取得し、リンクとしてHTMLに埋め込んでいます。
 
 次に`docs/contents/`に実際にMarkdownドキュメントを格納していきます。
