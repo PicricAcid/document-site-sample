@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: GitHubPages
+title: github_pages
 tag: github_pages
 ---
