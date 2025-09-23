@@ -1,9 +1,9 @@
 ---
-title: GitHubによるドキュメントサイト管理システムの構築　Part.2
+title: GitHubによるドキュメントサイト管理システムの構築 Part.2
 author: PicricAcid
 date: 2025-09-23
 lastmod: 2025-09-23
-tags: [github, github_pages, vscode]
+tags: [github, github_pages]
 ---
 
 GitHub Pagesで作るMarkdownドキュメントサイトシステムの第2回です。
@@ -48,19 +48,19 @@ layout: default
 ## 🗒️ 記事一覧
 
 <ul>
-	{% assign pages = site.pages | where_exp: "p", "p.path contains 'contents/'" %}
-	{% for p in pages %}
+	\{\% assign pages = site.pages | where_exp: "p", "p.path contains 'contents/'" \%\}
+	\{\% for p in pages \%\}
 		<li>
-			<a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+			<a href="\{\{ site.baseurl \}\}\{\{ p.url \}\}">\{\{ p.title \}\}</a>
 		</li>
-	{% endfor %}
+	\{\% endfor \%\}
 </ul>
 
 ---
 
 ```
 
-`\{\% \%\}`や`{{ }}`で囲っている箇所は、GitHub Pages上で動いているサイト変換ツール(Jekyll)で使うことのできるLiquidというテンプレート記法によるものです。`{{ }}`で囲った部分は内容をHTMLに埋め込むことができ、`\{\% \%\}`で囲った部分ではforやifなどの制御文を使うことができます。
+`\{\% \%\}`や`\{\{ \}\}`で囲っている箇所は、GitHub Pages上で動いているサイト変換ツール(Jekyll)で使うことのできるLiquidというテンプレート記法によるものです。`\{\{ \}\}`で囲った部分は内容をHTMLに埋め込むことができ、`\{\% \%\}`で囲った部分ではforやifなどの制御文を使うことができます。
 ここでは、記事を置いている`docs/contents/`から記事をすべて取得し、リンクとしてHTMLに埋め込んでいます。
 
 次に`docs/contents/`に実際にMarkdownドキュメントを格納していきます。
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
 これを`default.html`に埋め込みます。
 
 ```diff
-			{{ content }}
+			\{\{ content \}\}
 		</main>
 
 +		<aside class="page-sidebar">
@@ -131,10 +131,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	</div>
 
 	<footer>
-		<p>©︎ {{ site.time | date: "%Y" }} {{ site.title }}</p>
+		<p>©︎ \{\{ site.time | date: "%Y" \}\} \{\{ site.title \}\}</p>
 	</footer>
 	
-+	<script src="{{ site.baseurl }}/assets/toc.js"></script>
++	<script src="\{\{ site.baseurl \}\}/assets/toc.js"></script>
 </body>
 ```
 
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 +	<div class="feedback">
 +		<a class="feedback-button" 
-+			href="https://github.com/[リポジトリのURL]/issues/new?title={{ page.title | uri_escape }} のフィードバック&body=このページに関するフィードバックを入力してください: {{ site.url }}{{ page.url }}%0A%0A@{{ site.data.authors[page.author].github | page.author }}"
++			href="https://github.com/[リポジトリのURL]/issues/new?title=\{\{ page.title | uri_escape \}\} のフィードバック&body=このページに関するフィードバックを入力してください: \{\{ site.url \}\}\{\{ page.url \}\}%0A%0A@\{\{ site.data.authors[page.author].github | page.author \}\}"
 +			target="_blank">
 +			📝 フィードバックを送る
 +		</a>
@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
 ```
 
 Issue生成のリンクを踏ませているだけですね。
-url後半で`{{ site.data.authors[page.author].github | page.author }}`としている箇所があります。これは作成したIssueを投稿者にメンションするためのものです。
+url後半で`\{\{ site.data.authors[page.author].github | page.author \}\}`としている箇所があります。これは作成したIssueを投稿者にメンションするためのものです。
 これを実現するには記事ごとに`page.author`を設定する必要がありますので、記事のFrontmatterに著者を追加します。
 
 ```markdown
@@ -223,21 +223,21 @@ PicricAcid:
 ```diff
 <div class="wrapper page">
 	<main class="page-content">
-	<h1 class="page-title">{{ page.title }}</h1>
+	<h1 class="page-title">\{\{ page.title \}\}</h1>
 +	<p class="page-meta">
-+		{% if page.author %}🖋 {{ page.author }} {% endif %}
++		\{\% if page.author \%\}🖋 \{\{ page.author \}\} \{\% endif \%\}
 +	</p>
 	
-+	{% if page.tags %}
++	\{\% if page.tags \%\}
 +		<p class="page-tags">
 +		🏷 :
-+			{% for tag in page.tags %}
-+				<a class="tag-link" href="{{ site.baseurl }}/tags/{{ tag | downcase | uri_escape }}">[{{ tag }}]</a>
-+			{% endfor %}
++			\{\% for tag in page.tags \%\}
++				<a class="tag-link" href="\{\{ site.baseurl \}\}/tags/\{\{ tag | downcase | uri_escape \}\}">[\{\{ tag \}\}]</a>
++			\{\% endfor \%\}
 +		</p>
-+	{% endif %}
++	\{\% endif \%\}
   
-	{{ content }}
+	\{\{ content \}\}
 </main>
 ```
 
@@ -269,23 +269,23 @@ title: [タグページタイトル]
 layout: default
 ---
 
-{% assign count = 0 %}
-{% for p in site.pages %}
-	{% if p.tags and p.tags contains page.tag %}
-	{% assign count = count | plus: 1 %}
-	{% endif %}
-{% endfor %}
+\{\% assign count = 0 \%\}
+\{\% for p in site.pages \%\}
+	\{\% if p.tags and p.tags contains page.tag \%\}
+	\{\% assign count = count | plus: 1 \%\}
+	\{\% endif \%\}
+\{\% endfor \%\}
 
-<h1>{{ page.title }} ({{ count }})</h1>
+<h1>\{\{ page.title \}\} (\{\{ count \}\})</h1>
 
 <ul>
-	{% for p in site.pages %}
-		{% if p.tags and p.tags contains page.tag %}
+	\{\% for p in site.pages \%\}
+		\{\% if p.tags and p.tags contains page.tag \%\}
 			<li>
-				<a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+				<a href="\{\{ site.baseurl \}\}\{\{ p.url \}\}">\{\{ p.title \}\}</a>
 			</li>
-		{% endif %}
-	{% endfor %}
+		\{\% endif \%\}
+	\{\% endfor \%\}
 </ul>
 ```
 
