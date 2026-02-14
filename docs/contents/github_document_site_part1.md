@@ -4,6 +4,8 @@ author: PicricAcid
 tags: [github, github_pages]
 ---
 
+[pdf url](https://github.com/PicricAcid/document-site-sample/releases/download/article-github_document_site_part1/github_document_site_part1.pdf)
+
 GitHub Pagesを用いてMarkdownドキュメントを静的サイトにして公開するシステムを構築してみた記事です。
 サイト公開のしくみだけでなく、VSCodeによる執筆支援、MCPサーバによるAIとの連携についても記述するつもりです。
 社内でのマニュアル管理などに用いることを想定したシステムになっています。
