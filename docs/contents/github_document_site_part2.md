@@ -6,6 +6,8 @@ lastmod: 2025-09-23
 tags: [github, github_pages]
 ---
 
+[github_document_site_part2.pdf](https://github.com/PicricAcid/document-site-sample/releases/download/article-github_document_site_part2/github_document_site_part2.pdf)
+
 GitHub Pagesで作るMarkdownドキュメントサイトシステムの第2回です。
 第1回の続きとなっていますので、よろしければ第一回もご覧ください。
 
